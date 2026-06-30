@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ══════════════════════════════════════
+         IDENTIFICACIÓN DEL PROYECTO
+    ══════════════════════════════════════ -->
+    <groupId>com.stylestock</groupId>
+    <artifactId>ProyectoTienda_Ropa</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+    <name>ProyectoTienda_Ropa</name>
+    <description>Sistema de Gestión de Inventario y Ventas - Tienda de Ropa</description>
+
+    <!-- ══════════════════════════════════════
+         PROPIEDADES GLOBALES
+    ══════════════════════════════════════ -->
+    <properties>
+        <!-- Java 21 LTS -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Evita error si no existe web.xml (opcional con @WebServlet) -->
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
+
+    <!-- ══════════════════════════════════════
+         DEPENDENCIAS
+    ══════════════════════════════════════ -->
+    <dependencies>
+
+        <!-- Jakarta Servlet API 6.0 — Tomcat 10.1 / Jakarta EE 10
+             scope provided: Tomcat ya la incluye en runtime,
+             no se empaqueta dentro del .war -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- MySQL Connector/J — JDBC para Tienda_ropa en MySQL Workbench -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+
+        <!-- Gson — serialización JSON en Servlets (etapas futuras) -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <!-- ══════════════════════════════════════
+         BUILD
+    ══════════════════════════════════════ -->
+    <build>
+        <!-- Nombre del .war desplegado en Tomcat:
+             http://localhost:8080/tienda_ropa/ -->
+        <finalName>tienda_ropa</finalName>
+
+        <plugins>
+
+            <!-- Compilador Java 21 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- Empaquetado WAR para Tomcat 10.1 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <!-- Permite compilar sin web.xml si usas @WebServlet -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

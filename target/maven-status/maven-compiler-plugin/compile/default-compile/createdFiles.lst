@@ -1,0 +1,10 @@
+com\stylestock\dao\UsuarioDAO.class
+com\stylestock\model\Producto.class
+com\stylestock\servlet\VarianteServlet.class
+com\stylestock\servlet\UsuarioServlet.class
+com\stylestock\model\Usuario.class
+com\stylestock\model\Variante.class
+com\stylestock\util\ConexionDB.class
+com\stylestock\servlet\ProductoServlet.class
+com\stylestock\dao\ProductoDAO.class
+com\stylestock\dao\VarianteDAO.class
