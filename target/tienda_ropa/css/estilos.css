@@ -528,3 +528,34 @@ input::placeholder { color: #44445a; }
   text-align: left;
   font-weight: 500;
 }
+
+/* ════════════════════
+   SESIÓN ACTIVA
+════════════════════ */
+.sesion-info {
+  font-size: 0.82rem;
+  color: var(--text2);
+  margin-right: 4px;
+}
+
+/* ════════════════════
+   SESIÓN ACTIVA
+════════════════════ */
+.sesion-info {
+  font-size: 0.82rem;
+  color: var(--text2);
+  margin-right: 4px;
+}
+.login-success {
+  color: var(--success);
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+  text-align: left;
+  font-weight: 500;
+}
+.btn-crear {
+  margin-top: 10px;
+}
+.login-container--wide {
+  width: 400px;
+}

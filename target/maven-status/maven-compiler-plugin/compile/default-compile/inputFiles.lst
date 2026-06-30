@@ -4,7 +4,9 @@ C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylesto
 C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\model\Producto.java
 C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\model\Usuario.java
 C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\model\Variante.java
+C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\servlet\FiltroSeguridad.java
 C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\servlet\ProductoServlet.java
+C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\servlet\SesionServlet.java
 C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\servlet\UsuarioServlet.java
 C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\servlet\VarianteServlet.java
 C:\Users\javi\OneDrive\Documentos\ProyectoTienda_Ropa\src\main\java\com\stylestock\util\ConexionDB.java
