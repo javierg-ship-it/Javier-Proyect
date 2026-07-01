@@ -57,11 +57,15 @@ public class UsuarioServlet extends HttpServlet {
             // Rol siempre = 3 (Cliente) desde el servidor
             Usuario u = new Usuario(usuario, nombre, correo, contrasena, 3);
 
-            if (dao.insertar(u)) {
-                resp.sendRedirect(req.getContextPath() + "/index.jsp?registrado=true");
-            } else {
-                reenviarRegistro(req, resp, "No se pudo crear la cuenta. Intenta de nuevo.");
-            }
+            boolean insertado = dao.insertar(u);
+
+System.out.println("¿Se insertó?: " + insertado);
+
+if (insertado) {
+    resp.sendRedirect(req.getContextPath() + "/index.jsp?registrado=true");
+} else {
+    reenviarRegistro(req, resp, "No se pudo crear la cuenta. Intenta de nuevo.");
+}
 
         } catch (SQLException e) {
             e.printStackTrace();
