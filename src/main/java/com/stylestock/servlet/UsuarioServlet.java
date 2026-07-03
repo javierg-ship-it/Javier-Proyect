@@ -37,6 +37,12 @@ public class UsuarioServlet extends HttpServlet {
         String nombre     = param(req, "nombre");
         String correo     = param(req, "correo");
         String contrasena = param(req, "contrasena");
+        System.out.println("====== DATOS RECIBIDOS ======");
+        System.out.println("usuario: " + usuario);
+        System.out.println("nombre: " + nombre);
+        System.out.println("correo: " + correo);
+        System.out.println("contrasena: " + contrasena);
+        System.out.println("=============================");
 
         if (usuario.isEmpty() || nombre.isEmpty() ||
             correo.isEmpty()  || contrasena.isEmpty()) {

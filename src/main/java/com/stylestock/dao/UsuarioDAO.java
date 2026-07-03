@@ -37,18 +37,33 @@ public class UsuarioDAO {
 
     // ── Insertar nuevo usuario (rol siempre 3 = Cliente) ──
     public boolean insertar(Usuario u) throws SQLException {
-        String sql = "INSERT INTO usuarios (usuario, nombre, correo, contrasena, id_rol) " +
-                     "VALUES (?, ?, ?, ?, ?)";
+
+        String sql = "INSERT INTO usuarios (usuario, nombre, correo, contrasena, id_rol) VALUES (?, ?, ?, ?, ?)";
+
+        System.out.println("=== INSERTANDO USUARIO ===");
+        System.out.println("Usuario: " + u.getUsuario());
+        System.out.println("Nombre : " + u.getNombre());
+        System.out.println("Correo : " + u.getCorreo());
+        System.out.println("Rol    : " + u.getIdRol());
+
         Connection cn = ConexionDB.obtenerConexion();
-        try (cn; PreparedStatement ps = cn.prepareStatement(sql)) {
+
+        try (PreparedStatement ps = cn.prepareStatement(sql)) {
+
             ps.setString(1, u.getUsuario());
             ps.setString(2, u.getNombre());
             ps.setString(3, u.getCorreo());
             ps.setString(4, u.getContrasena());
-            ps.setInt(5,    u.getIdRol());
-            return ps.executeUpdate() > 0;
+            ps.setInt(5, u.getIdRol());
+
+            int filas = ps.executeUpdate();
+
+            System.out.println("Filas insertadas: " + filas);
+
+            return filas > 0;
+
         } finally {
-            ConexionDB.cerrarConexion(cn);
+        ConexionDB.cerrarConexion(cn);
         }
     }
 
